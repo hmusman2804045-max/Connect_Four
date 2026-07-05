@@ -712,3 +712,38 @@ body {
   .layout { gap: 28px; }
   .analytics { width: min(600px, 92vw); margin-top: 20px; }
 }
+
+@media (max-width: 768px) {
+  .board-stage {
+    transform: scale(0.7);
+    transform-origin: top center;
+    margin-bottom: -120px;
+  }
+  .app {
+    padding: 20px 16px 40px;
+  }
+  .topbar {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .board-stage {
+    transform: scale(0.53);
+    transform-origin: top center;
+    margin-bottom: -200px;
+  }
+  .title {
+    font-size: 1.6rem;
+  }
+  .controls {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+  .turn-chip {
+    padding: 8px 12px;
+    font-size: 0.65rem;
+  }
+}
