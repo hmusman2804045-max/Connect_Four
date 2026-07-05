@@ -81,11 +81,14 @@ def build_analytics(logger):
 
 
 @app.get("/")
+@app.get("/api")
+@app.get("/api/")
 def health():
     return {"ok": True, "service": "connect-four-api"}
 
 
 @app.get("/start")
+@app.get("/api/start")
 def start(depth: int = Query(5, ge=1, le=6)):
     """Reset to a fresh board. Optional ?depth= controls AI search depth."""
     global game
@@ -100,6 +103,7 @@ def start(depth: int = Query(5, ge=1, le=6)):
 
 
 @app.post("/move")
+@app.post("/api/move")
 def move(req: MoveRequest):
     """Apply the player's move, then let the AI respond.
 
